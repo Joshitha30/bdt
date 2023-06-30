@@ -1,0 +1,28 @@
+n<-as.integer(readline(prompt="Enter the number of Employees:"))
+emp_id<-vector(mode="integer",length=n)
+emp_name<-vector(mode="character",length=n)
+emp_doj<-vector(mode="character",length=n)
+emp_dept<-vector(mode="character",length=n)
+emp_design<-vector(mode="character",length=n)
+emp_code<-vector(mode="character",length=n)
+print("Enter the details of the employee:")
+
+for(i in 1:n)
+{
+  emp_id[i]<-as.integer(readline(prompt="Enter employee id"))
+  emp_name[i]<-as.character(readline(prompt="Enter employee name"))
+  emp_doj[i]<-as.character(readline(prompt="Enter employee date of joining"))
+  emp_dept[i]<-as.character(readline(prompt="Enter employee department"))
+  emp_design[i]<-as.character(readline(prompt="Enter employee designation"))
+  emp_code[i]<-as.character(readline(prompt="Enter employee code"))
+}
+
+emp<-data.frame(emp_id,emp_name,emp_doj,emp_dept,emp_design,emp_code)
+print(emp)
+
+write.csv(emp,"employee.csv")
+read.csv("employee.csv")
+
+x<-data.frame(1,"neha","13-06-2020","pjhl","cse","analyst")
+write.table(x,"employee.csv",col.names=FALSE,append="TRUE",row.names=TRUE,quote=FALSE,sep=",")
+read.csv("employee.csv")

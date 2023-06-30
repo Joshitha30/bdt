@@ -1,0 +1,31 @@
+data()
+head(mtcars)
+row<-nrow(mtcars)
+print("TOTAL NUMBER OF CLOUMNS")
+print(row)
+col<-ncol(mtcars)
+print("TOTAL NUMBER OF CLOUMNS")
+print(col)
+z<-data.frame(mtcars)
+automatic<-0
+manual<-0
+for (i in 1:row)
+{
+  if(z[i,9]==0)
+    automatic<-automatic+1
+   else
+    manual<-manual+1
+}
+ifelse(automatic>manual,"More automatic","More manual")
+Horsepower<-x[,4]
+weight<-x[,6]
+scatter.smooth(Horsepower,weight,span=2/3,degree=1,family=c("symmetric","guassian"))
+mpg<-x[,1]
+hist(mpg,breaks=12,col="lightblue",border="pink")
+nam<-as.integer(x[,2])
+ncyl<-as.integer(x[,8])
+nvs<-as.integer(x[,9])
+new<-data.frame(nam,ncyl,nvs)
+sapply(new,class)
+x[,2]<5
+subset(mtcars,cyl<5)
